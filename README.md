@@ -1,4 +1,4 @@
-![“The Gates of Shell”, by Spencer Cheng, featuring Julien Barbier](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg)
+![“There is a way”](https://www.wallpaperflare.com/static/407/373/130/unix-bash-shell-way-wallpaper-preview.jpg)
 
 # Simple Shell
 
