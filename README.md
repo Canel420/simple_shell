@@ -70,6 +70,7 @@ like **ctrl-c** and **ctrl-d** are also allowed.
 * split.c - Function to tokenize the standar input lines.
 * paths.c - Function that searchs for commands in PATH enviromental variable.
 * execution.c - Function to create new processes for execution.
+* helpers.c - Utility functions to treat strings.
 
 
 
