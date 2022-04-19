@@ -10,24 +10,11 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-/* environment */
-
 extern char **environ;
-
-/* Shell functions */
 
 char **split_strings(char *buffer, char delimiter);
 char *mini_paths(char *command);
 int new_process(char *mini_path, char **tokens);
-void char_processing(char **tokens);
-
-/* Built-in functions */
-
-int sh_exit(void);
-
-/* Helpers */
-
-int _strlen(const char *s);
-int _strcmp(char *s1, char *s2);
+void char_processing(char *buffer);
 
 #endif /* SHELL_H */

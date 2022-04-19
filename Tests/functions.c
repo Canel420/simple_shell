@@ -31,7 +31,7 @@ char **split_strings(char *buffer, char delimiter)
 
 char *mini_paths(char *command)
 {
-	unsigned int mini_len, cmd_len, path_len;
+	unsigned int cmd_len, path_len;
 	const char *path = getenv("PATH");
 	char *copy, *token, *mini_search;
 
@@ -108,18 +108,17 @@ int new_process(char *mini_path, char **tokens)
 
 int main()
 {
-	char str[] = "ls -l";
+	char str[] = "pwd";
 	char **tokens = split_strings(str, ' ');
 	char *path = mini_paths(tokens[0]);
-	int new;
 
-	printf("This is first token = %s\n", tokens[0]);
+	printf("This is the first token = %s\n", tokens[0]);
 	printf("This is the resulting path = %s\n", path);
 
-	new = new_process(path, tokens);
+	new_process(path, tokens);
 
 	free(path);
 	free(tokens);
 
-	return(0);
+	return (0);
 }

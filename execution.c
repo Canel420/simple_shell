@@ -6,9 +6,6 @@ int new_process(char *mini_path, char **tokens)
 	int state, exe_state;
 	char **envp = environ;
 
-	if (mini_path == NULL)
-		return (-1);
-
 	process_id = fork();
 
 	if (process_id == -1)

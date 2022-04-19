@@ -2,12 +2,12 @@
 
 char *mini_paths(char *command)
 {
-	unsigned int mini_len, cmd_len, path_len;
+	unsigned int cmd_len, path_len;
 	const char *path = getenv("PATH");
 	char *copy, *token, *mini_search;
 
-	cmd_len = strlen(command);
-	path_len = strlen(path) + 1;
+	cmd_len = _strlen(command);
+	path_len = _strlen(path) + 1;
 
 	copy = malloc(sizeof(char) * path_len);
 	if (copy == NULL)
@@ -22,7 +22,7 @@ char *mini_paths(char *command)
 		token = strtok(NULL, ":");
 	while (token != NULL)
 	{
-		path_len = strlen(token);
+		path_len = _strlen(token);
 		mini_search = malloc(sizeof(char) * (path_len + cmd_len + 2));
 		if (mini_search == NULL)
 		{
