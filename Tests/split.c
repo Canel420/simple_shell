@@ -2,9 +2,9 @@
 
 char **split_strings(char *buffer, char delimiter)
 {
-	char **tokens;
-	char *token;
-        int i, size;
+	char **tokens = NULL;
+	char *token = NULL;
+        int i = 0, size = 0;
 
 	size = strlen(buffer) + 1;
 
