@@ -6,7 +6,7 @@ This is an implementation of a simple bash shell for linux operating systems
 interaction. It has limited power giving that it can only run
 simple commands for file management and system navigation.
 
----
+
 
 ## Compilation
 
@@ -17,7 +17,17 @@ command from the user
 ```bash
 gcc -Wall -Werror -Wextra -pedantic *.c
 ```
----
+
+## Usage
+
+The shell works when commands are input from user. The shell commands take the
+following syntax:
+
+```bash
+command name {arguments}
+```
+
+Arguments for each command can be reviewed using ***man command name***
 
 ## Commands
 
@@ -34,7 +44,6 @@ Some of the commands that can be execute on the terminal are the following:
 * less - View the contents of a text file.
 * cat - Read a file, create a file, and concatenates files.
 
----
 
 ## Built-in Functions
 
@@ -45,14 +54,14 @@ the kernel services.
 
 * env - Prints the current environment.
 
----
+
 
 ## Exit commands and the Shell
 
 To exit the shell, built-in function **exit** can be used. End of files commands
 like **ctrl-c** and **ctrl-d** are also allowed.
 
----
+
 
 ## Files
 
@@ -62,7 +71,7 @@ like **ctrl-c** and **ctrl-d** are also allowed.
 * paths.c - Function that searchs for commands in PATH enviromental variable.
 * execution.c - Function to create new processes for execution.
 
----
+
 
 ## Comments
 
