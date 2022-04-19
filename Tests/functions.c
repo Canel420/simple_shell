@@ -62,7 +62,7 @@ char *mini_paths(char *command)
 	        mini_search[path_len] = '/';
 		strcpy(mini_search + path_len + 1, command);
 	        mini_search[path_len + cmd_len + 1] = '\0';
-		if (access(mini_search, X_OK) != 0)
+		if (access(mini_search, F_OK & X_OK) != 0)
 		{
 			free(mini_search);
 		        mini_search = NULL;
@@ -80,6 +80,12 @@ int new_process(char *mini_path, char **tokens)
 	pid_t process_id;
 	int state, exe_state;
 	char **envp = environ;
+
+	if (mini_path == NULL)
+	{
+		perror("Error:");
+		return (-1);
+	}
 
 	process_id = fork();
 
@@ -102,7 +108,7 @@ int new_process(char *mini_path, char **tokens)
 
 int main()
 {
-	char str[] = "pwd";
+	char str[] = "ls -l";
 	char **tokens = split_strings(str, ' ');
 	char *path = mini_paths(tokens[0]);
 	int new;

@@ -2,26 +2,19 @@
 #define SHELL_H
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include <errno.h>
 #include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+#include <sys/wait.h>
 
-/* Prototypes */
+extern char **environ;
 
-char **split_strings(char *str, char delimiter);
+char **split_strings(char *buffer, char delimiter);
 char *mini_paths(char *command);
-
-/* Helper functions */
-
-int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
-int _strcmp(char *s1, char *s2);
-
-/*free functions */
-
+int new_process(char *mini_path, char **tokens);
+void char_processing(char *buffer);
 
 #endif /* SHELL_H */

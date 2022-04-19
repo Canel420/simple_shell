@@ -4,8 +4,6 @@ int main(void)
 {
 	char *buffer = NULL;
 	size_t char_count = 0;
-	char **tokens;
-	char *path;
 
 	while (write(1, "$ ", 2) && getline(&buffer, &char_count, stdin) != EOF)
 	{
@@ -16,16 +14,11 @@ int main(void)
 		}
 		else
 		{
-			tokens = split_strings(buffer, ' ');
-			printf("this is the first token = %s\n", tokens[0]);
-			path = mini_paths(tokens[0]);
-			printf("this is the resulting path = %s\n", path);
+			char_processing(buffer);
 
 			free(buffer);
-			free(path);
 			buffer = NULL;
 			char_count = 0;
-			free(tokens);
 
 		}
 		write(1, "\n", 1);

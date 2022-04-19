@@ -34,7 +34,7 @@ char *mini_paths(char *command)
 		strcpy(mini_search + path_len + 1, command);
 	        mini_search[path_len + cmd_len + 1] = '\0';
 
-		if (access(mini_search, X_OK) != 0)
+		if (access(mini_search, F_OK & X_OK) != 0)
 		{
 			free(mini_search);
 		        mini_search = NULL;
