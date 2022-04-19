@@ -1,5 +1,17 @@
 #include "shell.h"
 
+/**
+ * split_strings - Functions that tokenize a string.
+ *
+ * @buffer: String to be tokenize.
+ * @delimiter: Separator of each of the tokens.
+ *
+ * Description: This functions takes a given string and
+ * make tokens according to a delimiter like spaces or commas.
+ *
+ * Return: A pointer to an array of tokens.
+ */
+
 char **split_strings(char *buffer, char delimiter)
 {
 	char **tokens = NULL;

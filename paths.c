@@ -1,5 +1,18 @@
 #include "shell.h"
 
+/**
+ * mini_paths - Function that finds the path of a given command.
+ *
+ * @command: Command to search in PATH.
+ *
+ * Description: This function call the PATH enviromental variable,
+ * makes a copy of it, and tokenize each of the paths in there. Then
+ * adds the given command and confirms if the commands exist.
+ *
+ * Return: The command of the path if it exist or null in case it doesn't.
+ *
+ */
+
 char *mini_paths(char *command)
 {
 	unsigned int cmd_len, path_len;
