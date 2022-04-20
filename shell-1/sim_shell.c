@@ -10,7 +10,7 @@ int main(void)
 	while (write(1, "$ ", 2) && getline(&buffer, &char_count, stdin) != EOF)
 	{
 
-		tokens = split_strings(buffer, ' ');
+		tokens = tokenizer(buffer, "\n ");
 		path = mini_paths(tokens[0]);
 
 		char_processing(tokens, path);

@@ -19,7 +19,7 @@ int SHELL(char **string)
 				shell_env();
 			else
 			{
-				tokens = split_strings((*string), ' ');
+				tokens = tokenizer((*string), "\n ");
 				printf("first token = %s\n", tokens[0]);
 				path = mini_paths(tokens[0]);
 				printf("This is the resulting path = %s\n", path);

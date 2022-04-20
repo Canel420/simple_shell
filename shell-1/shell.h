@@ -21,6 +21,7 @@ char *mini_paths(char *command);
 int new_process(char *mini_path, char **tokens);
 void char_processing(char **tokens, char *path);
 char *env_copy(void);
+char **tokenizer(char *str, const char *delim);
 
 /* Helpers */
 

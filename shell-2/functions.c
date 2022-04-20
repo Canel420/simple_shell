@@ -1,32 +1,45 @@
 #include "shell.h"
 
-char **split_strings(char *buffer, char delimiter)
+char **tokenizer(char *str, const char *delim)
 {
-	char **tokens;
-	char *token;
-        int i, size;
+	int i = 0;
+	char *str_1 = NULL, *str_2 = NULL, *ptr = NULL, **ar = NULL;
 
-	size = strlen(buffer) + 1;
-	tokens = malloc(sizeof(char *) * size);
+	if (!(str) || !(delim))
+		return (NULL);
 
-	if (tokens == NULL)
+	str_1 = strdup(str);
+	str_2 = strdup(str);
+	if (!(str_1) || !(str_2))
+		return (NULL);
+
+	ptr = strtok(str_1, delim);
+	if (ptr == NULL)
+		return (NULL);
+
+	for (i = 0; ptr != NULL; i++)
 	{
-		perror("Error:");
-		free(tokens);
-		exit(98);
+		ptr = strtok(NULL, delim);
 	}
 
-	token = strtok(buffer, &delimiter);
+	ar = malloc(sizeof(char *) * (i + 1));
+	if (ar == NULL)
+		return (NULL);
 
-	i = 0;
-	while (token != NULL)
+	ptr = strtok(str_2, delim);
+	if (ptr == NULL)
+		return (NULL);
+
+	for (i = 0; ptr != NULL; i++)
 	{
-		tokens[i++] = token;
-		token = strtok(NULL, &delimiter);
+		ar[i] = strdup(ptr);
+		ptr = strtok(NULL, delim);
 	}
-	tokens[i] = NULL;
 
-	return (tokens);
+	ar[i] = NULL;
+	free(str_1);
+	free(str_2);
+	return (ar);
 }
 
 char *mini_paths(char *command)
@@ -102,20 +115,6 @@ int new_process(char *mini_path, char **tokens)
 	}
 	else
 		wait(&state);
-
-	return (0);
-}
-
-int main()
-{
-	char str[] = "ls -l";
-	char **tokens = split_strings(str, ' ');
-	char *path = mini_paths(tokens[0]);
-
-	new_process(path, tokens);
-
-	free(tokens);
-	free(path);
 
 	return (0);
 }
