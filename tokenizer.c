@@ -17,35 +17,35 @@ char **tokenizer(char *buffer, const char *delimiter)
 	int i = 0;
 	char *str_1 = NULL, *str_2 = NULL, *ptr = NULL, **ar = NULL;
 
-	if (!(str) || !(delim))
+	if (!(buffer) || !(delimiter))
 		return (NULL);
 
-	str_1 = strdup(str);
-	str_2 = strdup(str);
+	str_1 = strdup(buffer);
+	str_2 = strdup(buffer);
 	if (!(str_1) || !(str_2))
 		return (NULL);
 
-	ptr = strtok(str_1, delim);
+	ptr = strtok(str_1, delimiter);
 	if (ptr == NULL)
 		return (NULL);
 
 	for (i = 0; ptr != NULL; i++)
 	{
-		ptr = strtok(NULL, delim);
+		ptr = strtok(NULL, delimiter);
 	}
 
 	ar = malloc(sizeof(char *) * (i + 1));
 	if (ar == NULL)
 		return (NULL);
 
-	ptr = strtok(str_2, delim);
+	ptr = strtok(str_2, delimiter);
 	if (ptr == NULL)
 		return (NULL);
 
 	for (i = 0; ptr != NULL; i++)
 	{
 		ar[i] = strdup(ptr);
-		ptr = strtok(NULL, delim);
+		ptr = strtok(NULL, delimiter);
 	}
 
 	ar[i] = NULL;

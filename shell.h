@@ -16,7 +16,7 @@ extern char **environ;
 
 /* Shell functions */
 
-char **tokenizer(char *buffer, const char *delimiter)
+char **tokenizer(char *buffer, const char *delimiter);
 char *mini_paths(char *command);
 int new_process(char *mini_path, char **tokens);
 void char_processing(char **tokens, char *path);
