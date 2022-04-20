@@ -15,17 +15,18 @@
 char **tokenizer(char *buffer, const char *delimiter)
 {
 	int i = 0;
-	char *str_1 = NULL, *str_2 = NULL, *ptr = NULL, **ar = NULL;
+	char *tokens_count = NULL, *tokens = NULL, *ptr = NULL, **ar = NULL;
 
 	if (!(buffer) || !(delimiter))
 		return (NULL);
 
-	str_1 = strdup(buffer);
-	str_2 = strdup(buffer);
-	if (!(str_1) || !(str_2))
+        tokens_count = _strdup(buffer);
+        tokens = _strdup(buffer);
+
+	if (!(tokens_count) || !(tokens))
 		return (NULL);
 
-	ptr = strtok(str_1, delimiter);
+	ptr = strtok(tokens_count, delimiter);
 	if (ptr == NULL)
 		return (NULL);
 
@@ -38,18 +39,18 @@ char **tokenizer(char *buffer, const char *delimiter)
 	if (ar == NULL)
 		return (NULL);
 
-	ptr = strtok(str_2, delimiter);
+	ptr = strtok(tokens, delimiter);
 	if (ptr == NULL)
 		return (NULL);
 
 	for (i = 0; ptr != NULL; i++)
 	{
-		ar[i] = strdup(ptr);
+		ar[i] = _strdup(ptr);
 		ptr = strtok(NULL, delimiter);
 	}
 
 	ar[i] = NULL;
-	free(str_1);
-	free(str_2);
+	free(tokens_count);
+	free(tokens);
 	return (ar);
 }

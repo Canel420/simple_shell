@@ -30,7 +30,7 @@ char *mini_paths(char *command)
 		mini_search = malloc(sizeof(char) * (path_len + cmd_len) + 2);
 		if (mini_search == NULL)
 		{
-			perror("Error in malloc");
+			perror("sh: Error");
 			return (NULL);
 		}
 		strcpy(mini_search, token);

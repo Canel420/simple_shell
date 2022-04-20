@@ -9,7 +9,7 @@
 
 void shell_exit(void)
 {
-	exit(3);
+	exit(0);
 }
 
 /**

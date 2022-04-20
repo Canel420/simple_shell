@@ -20,7 +20,7 @@ char *env_copy(void)
 	copy = malloc(sizeof(char) * path_len);
 	if (copy == NULL)
 	{
-		perror("Error in copy");
+		perror("sh: Error");
 		return (NULL);
 	}
 	strcpy(copy, path);
