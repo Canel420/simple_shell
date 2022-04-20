@@ -23,14 +23,17 @@ int new_process(char *mini_path, char **tokens)
 
 	if (process_id == -1)
 	{
-		perror("Error on fork: ");
+		perror("sh: Error");
 		exit(3);
 	}
 	if (process_id == 0)
 	{
 		exe_state = execve(mini_path, tokens, envp);
 		if (exe_state == -1)
-			return (-1);
+		{
+			perror("sh: Error");
+			exit(14);
+		}
 	}
 	else
 		wait(&state);
