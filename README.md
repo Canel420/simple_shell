@@ -33,16 +33,16 @@ Arguments for each command can be reviewed using ***man command name***
 
 Some of the commands that can be execute on the terminal are the following:
 
-* ls - List current directory contents.
-* man - Print manual for a command.
-* pwd - Print working directory.
-* cd - Change directory.
-* mkdir - Create a directory.
-* echo - Prints text to the terminal window.
-* touch - Creates a file.
-* mv - Move or rename a file.
-* less - View the contents of a text file.
-* cat - Read a file, create a file, and concatenates files.
+* **ls** - List current directory contents.
+* **man** - Print manual for a command.
+* **pwd** - Print working directory.
+* **cd** - Change directory.
+* **mkdir** - Create a directory.
+* **echo** - Prints text to the terminal window.
+* **touch** - Creates a file.
+* **mv** - Move or rename a file.
+* **less** - View the contents of a text file.
+* **cat** - Read a file, create a file, and concatenates files.
 
 
 ## Built-in Functions
@@ -50,9 +50,9 @@ Some of the commands that can be execute on the terminal are the following:
 These are the functions that comes with the shell program and are not part of
 the kernel services.
 
-* exit - exits the shell.
+* **exit** - exits the shell.
 
-* env - Prints the current environment.
+* **env** - Prints the current environment.
 
 
 
@@ -65,14 +65,14 @@ like **ctrl-c** and **ctrl-d** are also allowed.
 
 ## Files
 
-* simple_shell.c - Main program which supports the prompt and general executions.
-* shell.h - Header file of the shell. Contains functions prototypes, definitions and requiered libraries.
-* Tokenizer.c - Function to tokenize the standar input lines.
-* env_copy.c - Function that makes a copy of the PATH enviromental variable.
-* paths.c - Function that searchs for commands in PATH enviromental variable.
-* execution.c - Function to create new processes for execution.
-* helpers.c - Utility functions to treat strings.
-* free_dp.c - Function that frees a double pointer containing elements created with malloc.
+* **simple_shell.c** - Main program which supports the prompt and general executions.
+* **shell.h** - Header file of the shell. Contains functions prototypes, definitions and requiered libraries.
+* **Tokenizer.c** - Function to tokenize the standar input lines.
+* **env_copy.c** - Function that makes a copy of the PATH enviromental variable.
+* **paths.c** - Function that searchs for commands in PATH enviromental variable.
+* **execution.c** - Function to create new processes for execution.
+* **helpers.c** - Utility functions to treat strings.
+* **free_dp.c** - Function that frees a double pointer containing elements created with malloc.
 
 
 
