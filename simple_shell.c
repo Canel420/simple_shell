@@ -33,7 +33,7 @@ int SHELL(char **string)
 			new_process(path, tokens);
 
 			free(path);
-			free(tokens);
+			free_dp(tokens);
 			free(*string);
 			(*string) = "True";
 		}
