@@ -65,15 +65,24 @@ like **ctrl-c** and **ctrl-d** are also allowed.
 
 ## Files
 
-* sim_shell.c - Main program which supports the prompt and general executions.
+* simple_shell.c - Main program which supports the prompt and general executions.
 * shell.h - Header file of the shell. Contains functions prototypes, definitions and requiered libraries.
-* split.c - Function to tokenize the standar input lines.
+* Tokenizer.c - Function to tokenize the standar input lines.
+* env_copy.c - Function that makes a copy of the PATH enviromental variable.
 * paths.c - Function that searchs for commands in PATH enviromental variable.
 * execution.c - Function to create new processes for execution.
 * helpers.c - Utility functions to treat strings.
+* free_dp.c - Function that frees a double pointer containing elements created with malloc.
+
 
 
 
 ## Comments
 
 **Use under your own risk!**
+
+## AUTHORS
+
+* Manuela Espinosa
+* Mateo Villada
+* Karol Díaz
