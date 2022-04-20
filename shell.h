@@ -19,11 +19,8 @@ extern char **environ;
 char **split_strings(char *buffer, char delimiter);
 char *mini_paths(char *command);
 int new_process(char *mini_path, char **tokens);
-void char_processing(char **tokens);
-
-/* Built-in functions */
-
-int sh_exit(void);
+void char_processing(char **tokens, char *path);
+char *env_copy(void);
 
 /* Helpers */
 

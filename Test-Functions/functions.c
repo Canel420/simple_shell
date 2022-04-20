@@ -108,17 +108,14 @@ int new_process(char *mini_path, char **tokens)
 
 int main()
 {
-	char str[] = "pwd";
+	char str[] = "ls -l";
 	char **tokens = split_strings(str, ' ');
 	char *path = mini_paths(tokens[0]);
 
-	printf("This is the first token = %s\n", tokens[0]);
-	printf("This is the resulting path = %s\n", path);
-
 	new_process(path, tokens);
 
-	free(path);
 	free(tokens);
+	free(path);
 
 	return (0);
 }

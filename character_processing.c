@@ -1,9 +1,12 @@
 #include "shell.h"
 
-void char_processing(char **tokens)
+void char_processing(char **tokens, char *path)
 {
-	char *path = mini_paths(tokens[0]);
-	printf("This is the path = %s\n", path);
+
+	if (_strcmp(tokens[0], "exit\n") == 0)
+	{
+		exit(3);
+	}
 
 	if (path != NULL)
 	{
@@ -13,6 +16,4 @@ void char_processing(char **tokens)
 	{
 		perror("Error");
 	}
-
-	free(path);
 }

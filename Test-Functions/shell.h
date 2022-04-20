@@ -17,4 +17,8 @@ char *mini_paths(char *command);
 int new_process(char *mini_path, char **tokens);
 void char_processing(char *buffer);
 
+/* built- ins */
+void shell_exit(void);
+void shell_env(void);
+
 #endif /* SHELL_H */

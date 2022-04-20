@@ -16,27 +16,18 @@
 char *mini_paths(char *command)
 {
 	unsigned int cmd_len, path_len;
-	const char *path = getenv("PATH");
-	char *copy, *token, *mini_search;
+	char *token, *mini_search, *env = env_copy();
 
 	cmd_len = _strlen(command);
-	path_len = _strlen(path) + 1;
 
-	copy = malloc(sizeof(char) * path_len);
-	if (copy == NULL)
-	{
-		perror("Error in copy");
-		return (NULL);
-	}
-	strcpy(copy, path);
-
-	token = strtok(copy, ":");
+	token = strtok(env, ":");
 	if (token == NULL)
 		token = strtok(NULL, ":");
+
 	while (token != NULL)
 	{
 		path_len = _strlen(token);
-		mini_search = malloc(sizeof(char) * (path_len + cmd_len + 2));
+		mini_search = malloc(sizeof(char) * (path_len + cmd_len) + 2);
 		if (mini_search == NULL)
 		{
 			perror("Error in malloc");
@@ -47,7 +38,7 @@ char *mini_paths(char *command)
 		strcpy(mini_search + path_len + 1, command);
 	        mini_search[path_len + cmd_len + 1] = '\0';
 
-		if (access(mini_search, F_OK & X_OK) != 0)
+		if (access(mini_search, X_OK) != 0)
 		{
 			free(mini_search);
 		        mini_search = NULL;
@@ -56,6 +47,6 @@ char *mini_paths(char *command)
 		else
 			break;
 	}
-	free(copy);
+	free(env);
 	return (mini_search);
 }
