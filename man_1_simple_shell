@@ -4,7 +4,7 @@
 .hy
 .SH NAME
 .PP
-SHELL \-
+SHELL \- command interpreter.
 .SH SYNOPSYS
 .PP
 \f[B]SHELL\f[R]
