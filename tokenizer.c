@@ -1,6 +1,18 @@
 #include "shell.h"
 
-char **tokenizer(char *str, const char *delim)
+/**
+ * tokenizer - Takes a string to tokenize accordign to a delimiter.
+ *
+ * @buffer: String to tokenize.
+ * @delimiter: Delimiter to make the tokens.
+ *
+ * Description: Takes a string and count the amount of tokens to make
+ * according to delimiter, then save each token as element of an array.
+ *
+ * Return: Pointer to array of tokens
+ */
+
+char **tokenizer(char *buffer, const char *delimiter)
 {
 	int i = 0;
 	char *str_1 = NULL, *str_2 = NULL, *ptr = NULL, **ar = NULL;

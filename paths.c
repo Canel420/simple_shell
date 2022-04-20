@@ -34,14 +34,14 @@ char *mini_paths(char *command)
 			return (NULL);
 		}
 		strcpy(mini_search, token);
-	        mini_search[path_len] = '/';
+		mini_search[path_len] = '/';
 		strcpy(mini_search + path_len + 1, command);
-	        mini_search[path_len + cmd_len + 1] = '\0';
+		mini_search[path_len + cmd_len + 1] = '\0';
 
 		if (access(mini_search, X_OK) != 0)
 		{
 			free(mini_search);
-		        mini_search = NULL;
+			mini_search = NULL;
 			token = strtok(NULL, ":");
 		}
 		else
