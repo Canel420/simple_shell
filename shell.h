@@ -10,14 +10,23 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+/* environment */
+
 extern char **environ;
 
-char **split_strings(char *buffer, char delimiter);
+/* Shell functions */
+
+char **tokenizer(char *buffer, const char *delimiter)
 char *mini_paths(char *command);
 int new_process(char *mini_path, char **tokens);
-void char_processing(char *buffer);
+void char_processing(char **tokens, char *path);
+char *env_copy(void);
 
-char **tokenizer(char *str, const char *delim);
+/* Helpers */
+
+int _strlen(const char *s);
+int _strcmp(char *s1, char *s2);
+char *_strcpy(char *dest, char *src);
 
 /* built- ins */
 void shell_exit(void);
