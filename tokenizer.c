@@ -20,8 +20,8 @@ char **tokenizer(char *buffer, const char *delimiter)
 	if (!(buffer) || !(delimiter))
 		return (NULL);
 
-        tokens_count = strdup(buffer);
-        tokens = strdup(buffer);
+        tokens_count = _strdup(buffer);
+        tokens = _strdup(buffer);
 
 	if (!(tokens_count) || !(tokens))
 		return (NULL);
@@ -45,7 +45,7 @@ char **tokenizer(char *buffer, const char *delimiter)
 
 	for (i = 0; ptr != NULL; i++)
 	{
-		ar[i] = strdup(ptr);
+		ar[i] = _strdup(ptr);
 		ptr = strtok(NULL, delimiter);
 	}
 

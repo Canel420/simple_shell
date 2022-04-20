@@ -24,31 +24,43 @@ int _strlen(const char *s)
 }
 
 /**
- * _strcpy - Copies the string pointed to by src.
+ * _strdup - Duplicate a given string.
  *
- * @dest: Pointer the copied array.
- * @src: Pointer to string to be copied.
+ * @str: Pointer the string to duplicate.
  *
- * Description: Copies the string pointed to by src to
- * the buffer pointed to by dest.
+ * Description: Duplicate the string copying the given string to
+ * a malloc memory space.
  *
- * Return: The copied string.
+ * Return: Pointer to the duplicated string.
  */
 
-char *_strcpy(char *dest, char *src)
+char *_strdup(char *str)
 {
-	char *sthg = dest;
+	char *dupli = NULL;
+	int i = 0;
 
-	while (*src != '\0')
+	if (str == NULL)
+		return (NULL);
+
+	i = 0;
+	while (str[i])
+		i++;
+
+	dupli = malloc(sizeof(char) * (i + 1));
+	if (dupli == NULL)
+		return (NULL);
+
+	i = 0;
+	while (str[i])
 	{
-		*dest = *src;
-		src++;
-		dest++;
+		dupli[i] = str[i];
+		i++;
 	}
-	*dest = '\0';
-	return (sthg);
-}
 
+	dupli[i] = '\0';
+
+	return (dupli);
+}
 /**
  * _strcmp - Function that compares two strings.
  * @s1: Pointer to a string.
