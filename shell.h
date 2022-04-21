@@ -29,7 +29,7 @@ char *_getenv(const char *name);
 int _strlen(const char *s);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
-int _strncmp(char *name, char *variable, unsigned int length);
+int _strncmp(char *str1, char *str2, unsigned int length);
 char *_strcpy(char *dest, char *src);
 
 /* built- ins */

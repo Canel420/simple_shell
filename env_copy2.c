@@ -1,5 +1,17 @@
 #include "shell.h"
 
+/**
+ * _getenv - Functions that gets an enviromental variable.
+ *
+ * @name: Pointer name to the environmental variable to retrieve.
+ *
+ * Description: Makes a copy of the enviromental variables saved in
+ * environ extern variable, and returns a copy of the desire variable.
+ *
+ * Return: Pointer to desire enviromental variable.
+ *
+ */
+
 char *_getenv(const char *name)
 {
 	char **environ_copy;
@@ -46,7 +58,10 @@ char *_getenv(const char *name)
 /**
  * env_copy - Function that makes a copy of the enviromental variable.
  *
- * Description: Takes the enviromental variable PATH and makes a copy.
+ * @environ_copy: Copy of the enviromental variables.
+ * @environ_length: Length of the entire environment.
+ *
+ * Description: Makes a copy of the enviroment of the user.
  *
  * Return: A pointer to the copy.
  *

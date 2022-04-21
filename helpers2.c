@@ -93,9 +93,17 @@ int _strcmp(char *s1, char *s2)
 	return (count);
 }
 
+/**
+ * _strncmp - compares two strings until a given length.
+ *
+ * @str1: First string to compare.
+ * @str2: Second string to compare.
+ * @length: length to compare.
+ * Return: 1 if strings are equal, -1 if they are not
+ */
 
 
-int _strncmp(char *name, char *variable, unsigned int length)
+int _strncmp(char *str1, char *str2, unsigned int length)
 {
 	unsigned int i;
 
