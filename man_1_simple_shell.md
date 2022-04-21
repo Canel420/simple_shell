@@ -4,7 +4,7 @@
 
 # NAME
 
-SHELL -
+SHELL - command interpreter.
 
 # SYNOPSYS
 **SHELL**
