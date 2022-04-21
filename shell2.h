@@ -20,13 +20,17 @@ char **tokenizer(char *buffer, const char *delimiter);
 char *mini_paths(char *command);
 int new_process(char *mini_path, char **tokens);
 void char_processing(char **tokens, char *path);
-char *env_copy(void);
+
+char **env_copy(char **environ_copy, unsigned int environ_length);
+char *_getenv(const char *name);
 
 /* Helpers */
 
 int _strlen(const char *s);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
+int _strncmp(char *str1, char *str2, unsigned int length);
+char *_strcpy(char *dest, char *src);
 
 /* built- ins */
 
