@@ -16,7 +16,7 @@
 char *mini_paths(char *command)
 {
 	unsigned int cmd_len, path_len;
-	char *token, *mini_search, *env = env_copy();
+	char *token, *mini_search, *env = _getenv("PATH");
 
 	cmd_len = _strlen(command);
 
