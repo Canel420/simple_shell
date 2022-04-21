@@ -3,6 +3,8 @@
 /**
  * free_dp - Function to free a double pointer array.
  *
+ * @double_pointer: Pointer to an array with malloc allocation over iteration.
+ *
  * Description: Frees a double pointer that allocates memory on
  * each iteration when creating elements of the array.
  *
