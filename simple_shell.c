@@ -13,11 +13,12 @@
 
 int SHELL(char **string)
 {
-	if (!(*string))
-		return (0);
 	size_t char_count = 0;
 	char **tokens = NULL;
 	char *path = NULL;
+
+	if (!(*string))
+		return (0);
 
 	write(1, "$ ", 2);
 	if (getline(&(*string), &char_count, stdin) != EOF)

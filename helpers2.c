@@ -92,3 +92,46 @@ int _strcmp(char *s1, char *s2)
 	}
 	return (count);
 }
+
+
+
+int _strncmp(char *name, char *variable, unsigned int length)
+{
+	unsigned int i;
+
+	i = 0;
+	while (i < length)
+	{
+		if (name[i] != variable[i])
+			return (-1);
+		i++;
+	}
+	return (1);
+}
+
+
+/**
+ * _strcpy - Copies the string pointed to by src.
+ *
+ * @dest: Pointer the copied array.
+ * @src: Pointer to string to be copied.
+ *
+ * Description: Copies the string pointed to by src to
+ * the buffer pointed to by dest.
+ *
+ * Return: The copied string.
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	char *sthg = dest;
+
+	while (*src != '\0')
+	{
+		*dest = *src;
+		src++;
+		dest++;
+	}
+	*dest = '\0';
+	return (sthg);
+}
