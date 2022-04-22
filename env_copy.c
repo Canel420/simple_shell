@@ -47,7 +47,7 @@ char *_getenv(const char *name)
 				return (NULL);
 			}
 			path = strcpy(path, value);
-			free_dp(environ_copy);
+			free_n_dp(environ_copy);
 			return (path);
 		}
 		i++;
