@@ -40,5 +40,6 @@ void shell_env(void);
 /* Free double pointer */
 
 void free_dp(char **double_pointer);
+void free_n_dp(char **double_pointer, unsigned int n);
 
 #endif /* SHELL_H */

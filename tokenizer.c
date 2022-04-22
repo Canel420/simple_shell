@@ -20,8 +20,8 @@ char **tokenizer(char *buffer, const char *delimiter)
 	if (!(buffer) || !(delimiter))
 		return (NULL);
 
-        tokens_count = _strdup(buffer);
-        tokens = _strdup(buffer);
+	tokens_count = _strdup(buffer);
+	tokens = _strdup(buffer);
 
 	if (!(tokens_count) || !(tokens))
 		return (NULL);
