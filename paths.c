@@ -23,6 +23,7 @@ char *mini_paths(char *command)
 	if (access(command, X_OK) == 0)
 	{
 		mini_search = _strdup(command);
+		free(env);
 		return (mini_search);
 	}
 

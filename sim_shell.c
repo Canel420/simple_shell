@@ -37,11 +37,13 @@ int main(void)
 
 		if (!buffer)
 			return (0);
-
 		else
 		{
 			if (_strcmp(tokens[0], "exit") == 0)
+			{
+				free_dp(tokens);
 				shell_exit();
+			}
 
 			if (_strcmp(tokens[0], "env") == 0)
 			{
