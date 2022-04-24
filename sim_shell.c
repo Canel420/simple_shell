@@ -37,27 +37,23 @@ int main(void)
 
 		if (!buffer)
 			return (0);
-		else
+		if (_strcmp(tokens[0], "exit") == 0)
 		{
-			if (_strcmp(tokens[0], "exit") == 0)
-			{
-				free_dp(tokens);
-				shell_exit();
-			}
-
-			if (_strcmp(tokens[0], "env") == 0)
-			{
-				shell_env();
-			}
-			path = mini_paths(tokens[0]);
-			new_process(path, tokens);
-
-			free(path);
 			free_dp(tokens);
-			free(buffer);
-			buffer = NULL;
-			char_count = 0;
+			shell_exit();
 		}
+		if (_strcmp(tokens[0], "env") == 0)
+		{
+			shell_env();
+		}
+		path = mini_paths(tokens[0]);
+		new_process(path, tokens);
+
+		free(path);
+		free_dp(tokens);
+		free(buffer);
+		buffer = NULL;
+		char_count = 0;
 	}
 	write(1, "\n", 1);
 
