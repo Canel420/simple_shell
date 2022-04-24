@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _isatty - Function to check fir interactive mode and print prompt.
+ * _isatty - Function to check for interactive mode and print prompt.
  *
  * Description: Determines if initiation of the shell is in interactive mode
  * and displays a prompt.
@@ -33,29 +33,23 @@ int main(void)
 	{
 		_isatty();
 		init = getline(&buffer, &char_count, stdin);
-		tokens = tokenizer(buffer, " \n");
-
 		if (!buffer)
 			return (0);
 
-		else
-		{
-			if (_strcmp(tokens[0], "exit") == 0)
-				shell_exit();
+		tokens = tokenizer(buffer, " \n");
 
-			if (_strcmp(tokens[0], "env") == 0)
-			{
-				shell_env();
-			}
-			path = mini_paths(tokens[0]);
-			new_process(path, tokens);
+		if (_strcmp(tokens[0], "exit") == 0)
+			shell_exit();
+		if (_strcmp(tokens[0], "env") == 0)
+			shell_env();
+		path = mini_paths(tokens[0]);
+		new_process(path, tokens);
 
-			free(path);
-			free_dp(tokens);
-			free(buffer);
-			buffer = NULL;
-			char_count = 0;
-		}
+		free(path);
+		free_dp(tokens);
+		free(buffer);
+		buffer = NULL;
+		char_count = 0;
 	}
 	write(1, "\n", 1);
 
