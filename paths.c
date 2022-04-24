@@ -18,9 +18,6 @@ char *mini_paths(char *command)
 	unsigned int cmd_len = 0, path_len = 0;
 	char *token = NULL, *mini_search = NULL, *env = _getenv("PATH");
 
-	if (!command)
-		exit(0);
-
 	cmd_len = _strlen(command);
 
 	if (access(command, X_OK) == 0)

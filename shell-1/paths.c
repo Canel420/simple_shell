@@ -22,8 +22,8 @@ char *mini_paths(char *command)
 
 	if (access(command, X_OK) == 0)
 	{
-		mini_search = _strdup(command);
-		return (mini_search);
+		printf("command has access");
+		return (NULL);
 	}
 
 	token = strtok(env, ":");

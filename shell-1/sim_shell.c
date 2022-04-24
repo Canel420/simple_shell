@@ -49,13 +49,12 @@ int main(void)
 			}
 			path = mini_paths(tokens[0]);
 			new_process(path, tokens);
-
-			free(path);
-			free_dp(tokens);
-			free(buffer);
-			buffer = NULL;
-			char_count = 0;
 		}
+		free(path);
+		free_dp(tokens);
+		free(buffer);
+		buffer = NULL;
+		char_count = 0;
 	}
 	write(1, "\n", 1);
 
