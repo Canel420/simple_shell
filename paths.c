@@ -19,18 +19,14 @@ char *mini_paths(char *command)
 	char *token = NULL, *mini_search = NULL, *env = _getenv("PATH");
 
 	cmd_len = _strlen(command);
-
 	if (access(command, X_OK) == 0)
 	{
 		mini_search = _strdup(command);
 		free(env);
-		return (mini_search);
-	}
-
+		return (mini_search); }
 	token = strtok(env, ":");
 	if (token == NULL)
 		token = strtok(NULL, ":");
-
 	while (token != NULL)
 	{
 		path_len = _strlen(token);
@@ -38,8 +34,7 @@ char *mini_paths(char *command)
 		if (mini_search == NULL)
 		{
 			perror("sh: Error");
-			return (NULL);
-		}
+			return (NULL); }
 		_strcpy(mini_search, token);
 		mini_search[path_len] = '/';
 		_strcpy(mini_search + path_len + 1, command);
@@ -49,11 +44,9 @@ char *mini_paths(char *command)
 		{
 			free(mini_search);
 			mini_search = NULL;
-			token = strtok(NULL, ":");
-		}
+			token = strtok(NULL, ":"); }
 		else
-			break;
-	}
+			break; }
 	free(env);
 	return (mini_search);
 }
