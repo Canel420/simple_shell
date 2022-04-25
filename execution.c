@@ -16,7 +16,7 @@
 int new_process(char *mini_path, char **tokens)
 {
 	pid_t process_id;
-	int state, exe_state;
+	int state = 0, exe_state = 0;
 	char **envp = environ;
 
 	if (mini_path == NULL)

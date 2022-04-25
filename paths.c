@@ -33,7 +33,7 @@ char *mini_paths(char *command)
 	while (token != NULL)
 	{
 		path_len = _strlen(token);
-		mini_search = malloc(sizeof(char) * (path_len + cmd_len) + 2);
+		mini_search = malloc(sizeof(char) *(path_len + cmd_len)+ 2);
 		if (mini_search == NULL)
 		{
 			perror("sh: Error");

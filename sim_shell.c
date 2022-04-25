@@ -34,7 +34,10 @@ int main(void)
 		_isatty();
 		init = getline(&buffer, &char_count, stdin);
 		if (!buffer)
-			return (0);
+		{
+			buffer = NULL;
+			char_count = 0;
+		}
 
 		tokens = tokenizer(buffer, " \n");
 
